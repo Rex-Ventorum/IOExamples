@@ -9,9 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FileService {
-    private File file;
-    private BufferedReader reader; 
     
+    private BufferedReader reader; 
     
     public List<String> readFile(File file) throws FileNotFoundException, IOException{
         reader = new BufferedReader(new FileReader(file));
@@ -30,5 +29,6 @@ public class FileService {
         }finally{
             if(reader != null) reader.close();
         }
+        return lineList;
     }
 }
